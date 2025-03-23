@@ -46,14 +46,9 @@ This repository contains a Loan Application API built with Flask and GraphQL, al
    cd server
    ```
 
-2. Install the required Python packages:
+2. Build and run the backend using Docker Compose:
    ```bash
-   pip install Flask Flask-GraphQL Flask-CORS graphene
-   ```
-
-3. Run the Flask server:
-   ```bash
-   python app.py
+   docker-compose up --build
    ```
 
    The server will start on `http://localhost:5000/graphql`.
@@ -70,14 +65,9 @@ This repository contains a Loan Application API built with Flask and GraphQL, al
    npm install
    ```
 
-3. Update the `BaseUrl` in `src/utils/BaseUrl.ts` to match the backend server URL:
-   ```typescript
-   export const BaseUrl = 'http://localhost:5000'; // Update this to your backend server URL
-   ```
-
-4. Start the React application:
+3. Start the React application:
    ```bash
-   npm start
+   npm run dev
    ```
 
    The web app will be available at `http://localhost:3000`.
@@ -86,14 +76,6 @@ This repository contains a Loan Application API built with Flask and GraphQL, al
 
 - Access the GraphQL API at `http://localhost:5000/graphql` to test queries and mutations.
 - Use the web app to view existing loans, add new payments, and see the payment statuses.
-
-## Contribution
-
-Feel free to fork the repository and submit pull requests for any improvements or features you would like to add.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
