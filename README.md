@@ -88,6 +88,7 @@ To run the tests for the server, you can use Docker Compose. Follow these steps:
 ## Usage
 
 - Access the GraphQL API at `http://localhost:5000/graphql` to test queries.
+- Access the REST API at `http://localhost:5000/api/payments` to test loan payment addition.
 - Use the web app to view existing loans, add new payments, and see the payment statuses.
 
 ## Acknowledgments
