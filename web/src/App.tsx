@@ -1,27 +1,13 @@
 import "./App.css";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import LoanCard from "./components/LoanCard";
 import { AddNewPayment } from "./components/NewPayment";
-import { BaseUrl } from "./utils/BaseUrl";
 import Loader from "./components/Loader";
 import ErrorComponent from "./components/Error";
+import { BaseUrl } from "./lib/utils/BaseUrl";
+import { GET_LOANS_AND_PAYMENTS } from "./lib/queries/loans";
 
-const GET_LOANS_AND_PAYMENTS = gql`
-  query GetLoansAndPayments {
-    loans {
-      id
-      name
-      interestRate
-      principal
-      dueDate
-      payments {
-        id
-        loanId
-        paymentDate
-      }
-    }
-  }
-`;
+
 
 function App() {
   const { loading, error, data, refetch } = useQuery(GET_LOANS_AND_PAYMENTS);

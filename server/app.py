@@ -55,6 +55,12 @@ app.add_url_rule(
 @app.route("/api/payments", methods=["POST"])
 def add_payment():
     data = request.json
+
+    if "loanId" not in data or not isinstance(data["loanId"], int):
+        return jsonify({"error": "loanId is required"}), 400
+    if "paymentAmount" not in data or not isinstance(data["paymentAmount"], (int, float)) or data["paymentAmount"] <= 0:
+        return jsonify({"error": "paymentAmount is required and should be a positive number"}), 400
+    
     new_payment = {
         "id": len(loan_payments) + 1,  
         "loan_id": data["loanId"],

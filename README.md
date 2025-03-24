@@ -48,7 +48,7 @@ This repository contains a Loan Application API built with Flask and GraphQL, al
 
 2. Build and run the backend using Docker Compose:
    ```bash
-   docker-compose up --build
+   docker compose up --build
    ```
 
    The server will start on `http://localhost:5000/graphql`.
@@ -72,9 +72,25 @@ This repository contains a Loan Application API built with Flask and GraphQL, al
 
    The web app will be available at `http://localhost:3000`.
 
+## Running Tests
+
+To run the tests for the server, you can use Docker Compose. Follow these steps:
+
+1. Navigate to the `server/` directory:
+   ```bash
+   cd server
+   ```
+
+2. Run the tests using the following command:
+   ```bash
+   docker compose run --rm  server sh -c "python -m unittest test_app.py"
+   ```
+
+   This command will execute the tests defined in `test_app.py` and provide you with the results.
+
 ## Usage
 
-- Access the GraphQL API at `http://localhost:5000/graphql` to test queries and mutations.
+- Access the GraphQL API at `http://localhost:5000/graphql` to test queries.
 - Use the web app to view existing loans, add new payments, and see the payment statuses.
 
 ## Acknowledgments
