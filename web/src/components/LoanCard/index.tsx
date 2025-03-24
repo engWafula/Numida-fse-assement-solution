@@ -40,9 +40,9 @@ const LoanCard: React.FC<LoanCardProps> = ({ loan }) => {
         <div className="loan-card">
             <h2 className="loan-title">{loan.name}</h2>
             <p><strong>Interest Rate:</strong> {loan.interestRate}%</p>
-            <p><strong>Principal:</strong> ${loan.principal.toLocaleString()}</p>
+            <p><strong>Principal:</strong> {loan.principal.toLocaleString()}</p>
             <p><strong>Due Date:</strong> {new Date(loan.dueDate).toDateString()}</p>
-            <p><strong>Payment Date:</strong> {paymentDate ? new Date(paymentDate).toDateString() : 'Unpaid'}</p>
+            <p><strong>Payment Date:</strong> {paymentDate ? new Date(paymentDate).toDateString() : 'N/A'}</p>
             <p><strong>Status:</strong> <span className={`status ${status.replace(/\s/g, '-').toLowerCase()}`}>{status}</span></p>
         </div>
     );

@@ -6,7 +6,7 @@ import Loader from "./components/Loader";
 import ErrorComponent from "./components/Error";
 import { BaseUrl } from "./lib/utils/BaseUrl";
 import { GET_LOANS_AND_PAYMENTS } from "./lib/queries/loans";
-
+import { toast } from 'react-toastify'; 
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ loanId, paymentAmount }),
+        body: JSON.stringify({ loanId:Number(loanId), paymentAmount:Number(paymentAmount) }),
       });
 
       if (!response.ok) {
@@ -33,8 +33,10 @@ function App() {
 
       const payment = await response.json();
       refetch();
+      toast.success(`Payment added: ${paymentAmount}`); // Show success toast
       console.log(`Payment added:`, payment);
     } catch (error) {
+      toast.error("Error adding payment: " + error); // Show error toast
       console.error("Error adding payment:", error);
     }
   };

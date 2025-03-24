@@ -65,7 +65,6 @@ def add_payment():
         "id": len(loan_payments) + 1,  
         "loan_id": data["loanId"],
         "payment_date": datetime.date.today(),  
-        "amount": data["paymentAmount"]  
     }
 
     loan_payments.append(new_payment)
