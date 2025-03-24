@@ -13,7 +13,6 @@ function App() {
   const { loading, error, data, refetch } = useQuery(GET_LOANS_AND_PAYMENTS);
 
   if (loading) return <Loader />;
-  if (error) return <ErrorComponent message={`Error: ${error.message}`} />; 
 
   const loans = data?.loans || [];
 
@@ -54,6 +53,7 @@ function App() {
           <LoanCard key={loan.id} loan={loan} />
         ))}
       </div>
+      {error &&  <ErrorComponent message={`Error: ${error.message}`} />}
     </div>
   );
 }
