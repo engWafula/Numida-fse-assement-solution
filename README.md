@@ -30,12 +30,9 @@ This repository contains a Loan Application API built with Flask and GraphQL, al
 
 - Python 3.x
 - Node.js and npm
-- Flask
-- Flask-GraphQL
-- Flask-CORS
-- Graphene
 - React
 - Apollo Client
+- Docker
 
 ## Installation
 
