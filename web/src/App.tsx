@@ -32,10 +32,10 @@ function App() {
 
       const payment = await response.json();
       refetch();
-      toast.success(`Payment added: ${paymentAmount}`); // Show success toast
+      toast.success(`Payment added: ${paymentAmount}`); 
       console.log(`Payment added:`, payment);
     } catch (error) {
-      toast.error("Error adding payment: " + error); // Show error toast
+      toast.error("Error adding payment: " + error); 
       console.error("Error adding payment:", error);
     }
   };

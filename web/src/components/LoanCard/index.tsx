@@ -2,7 +2,9 @@ import React from 'react';
 import './index.css';
 
 interface Payment {
+    id:string
     paymentDate: string;
+    loanId:string
 }
 
 interface Loan {
